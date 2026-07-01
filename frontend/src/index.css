@@ -1,0 +1,154 @@
+@import 'tailwindcss';
+
+@layer base {
+  * {
+    border-color: #e2e8f0;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: #f8fafc;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+
+  .dark body {
+    background-color: #020617;
+    color: #f8fafc;
+  }
+}
+
+@layer components {
+  .workspace-card {
+    background: rgba(255, 255, 255, 0.55) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.45) !important;
+    transition: all 0.2s;
+  }
+
+  .dark .workspace-card {
+    background: rgba(15, 23, 42, 0.55) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.55) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.45) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07) !important;
+    color: #0f172a !important;
+  }
+
+  .glass-panel-dark {
+    background: rgba(15, 23, 42, 0.55) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+    color: #f1f5f9 !important;
+  }
+
+  /* Force sharp text colors for primary dashboard/project elements */
+  .high-contrast-title,
+  .workspace-card h1,
+  .workspace-card h2,
+  .workspace-card h3,
+  .workspace-card .card-title,
+  .project-title,
+  .metric-title {
+    color: #0f172a !important;
+    font-weight: 600 !important;
+  }
+
+  .dark .high-contrast-title,
+  .dark .workspace-card h1,
+  .dark .workspace-card h2,
+  .dark .workspace-card h3,
+  .dark .workspace-card .card-title,
+  .dark .project-title,
+  .dark .metric-title {
+    color: #ffffff !important;
+  }
+
+  /* When an image background is active, force the premium frosted glass */
+  .has-bg-image .workspace-card,
+  .has-bg-image .glass-panel,
+  .has-bg-image .card {
+    background: rgba(255, 255, 255, 0.55) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.45) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07) !important;
+    color: #0f172a !important;
+  }
+
+  .has-bg-image .high-contrast-text,
+  .has-bg-image h1,
+  .has-bg-image h2,
+  .has-bg-image h3,
+  .has-bg-image .text-2xl,
+  .has-bg-image .text-3xl,
+  .has-bg-image .text-4xl,
+  .has-bg-image .text-xl {
+    color: #0f172a !important;
+    font-weight: 600 !important;
+  }
+
+  .has-bg-image p,
+  .has-bg-image span,
+  .has-bg-image .text-muted-foreground,
+  .has-bg-image .opacity-60,
+  .has-bg-image .opacity-70,
+  .has-bg-image .opacity-80,
+  .has-bg-image .opacity-90 {
+    color: #334155 !important; /* slate-700 */
+    font-weight: 600 !important;
+    opacity: 1 !important;
+  }
+
+  .high-contrast-text {
+    color: #0f172a;
+    font-weight: 600;
+  }
+
+  .dark .high-contrast-text {
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .text-shadow {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .drop-shadow-high {
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(15, 23, 42, 0.2);
+    border-radius: 10px;
+  }
+
+  .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
